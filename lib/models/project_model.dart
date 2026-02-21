@@ -50,7 +50,8 @@ class ProjectModel {
     ),
     ProjectModel(
       title: 'Pixel Paint',
-      description: 'A paint by pixel game in the browser',
+      description:
+          'A paint by pixel game in the browser. Bring your own image to paint.',
       url: 'https://pixel-paint-codedbykay.netlify.app/',
       icon: Icons.brush,
       tags: ['Art', 'Canvas', 'Creative', 'TypeScript', 'HTML', 'CSS'],
