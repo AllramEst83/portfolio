@@ -30,7 +30,15 @@ class ProjectModel {
           'A modern, interactive 32-key piano web application built with Tone.js for real-time sound synthesis, extensive audio effects, and built-in song playback capabilities.',
       url: 'https://simply-piano.netlify.app/',
       icon: Icons.piano,
-      tags: ['Music', 'Web', 'Interactive', 'Tone.js', 'JavaScript'],
+      tags: [
+        'Music',
+        'Web',
+        'Interactive',
+        'Tone.js',
+        'JavaScript',
+        'HTML',
+        'CSS',
+      ],
     ),
     ProjectModel(
       title: 'Barvabygden',
