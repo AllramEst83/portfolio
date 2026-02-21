@@ -19,34 +19,33 @@ class ProjectModel {
     ProjectModel(
       title: 'Terminal Emulator',
       description:
-          'A web-based terminal emulator — command-line vibes in the browser.',
+          'This project reimagines a late-20th-century terminal—glowing phosphor text, chunky borders, and all—but layers it with a modern conversational AI experience. The goal was to capture that nostalgic boot-screen vibe while letting today’s LLM-backed workflows shine, giving developers a playground where retro aesthetics meet contemporary intelligence.',
       url: 'https://terminal.codedbykay.se/',
       icon: Icons.terminal,
-      tags: ['Web', 'CLI', 'Interactive'],
+      tags: ['Web', 'CLI', 'Interactive', 'LLM', 'TypeScript', 'HTML', 'CSS'],
     ),
     ProjectModel(
       title: 'Simply Piano',
       description:
-          'An interactive piano built for the web — press keys, make music.',
+          'A modern, interactive 32-key piano web application built with Tone.js for real-time sound synthesis, extensive audio effects, and built-in song playback capabilities.',
       url: 'https://simply-piano.netlify.app/',
       icon: Icons.piano,
-      tags: ['Music', 'Web', 'Interactive'],
+      tags: ['Music', 'Web', 'Interactive', 'Tone.js', 'JavaScript'],
     ),
     ProjectModel(
       title: 'Barvabygden',
       description:
-          'A community-driven web presence for the Barva village region.',
+          'A community-driven web presence for the Barva parish in Sweden.',
       url: 'https://barvabygden.netlify.app/',
       icon: Icons.landscape,
-      tags: ['Community', 'Web', 'Design'],
+      tags: ['Community', 'Web', 'Design', 'HTML', 'CSS', 'JavaScript'],
     ),
     ProjectModel(
       title: 'Pixel Paint',
-      description:
-          'A pixel art editor in the browser — draw, color, create.',
+      description: 'A paint by pixel game in the browser',
       url: 'https://pixel-paint-codedbykay.netlify.app/',
       icon: Icons.brush,
-      tags: ['Art', 'Canvas', 'Creative'],
+      tags: ['Art', 'Canvas', 'Creative', 'TypeScript', 'HTML', 'CSS'],
     ),
   ];
 }
