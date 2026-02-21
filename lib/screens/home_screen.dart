@@ -79,11 +79,11 @@ class HomeScreen extends StatelessWidget {
                   ? SliverGrid(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 20,
-                        crossAxisSpacing: 20,
-                        mainAxisExtent: 280,
-                      ),
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 20,
+                            crossAxisSpacing: 20,
+                            mainAxisExtent: 280,
+                          ),
                       delegate: SliverChildBuilderDelegate(
                         (context, i) => ProjectCard(
                           project: ProjectModel.featured[i],
@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 40),
                 child: Center(
                   child: Text(
-                    '© ${DateTime.now().year} CodedByKay — Binary Jazz',
+                    '© ${DateTime.now().year} CodedByKay — Binary Jazz Engineer',
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: cs.onSurface.withValues(alpha: 0.45),
                     ),
