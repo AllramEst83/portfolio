@@ -22,7 +22,15 @@ class ProjectModel {
           'This project reimagines a late-20th-century terminal—glowing phosphor text, chunky borders, and all—but layers it with a modern conversational AI experience. The goal was to capture that nostalgic boot-screen vibe while letting today’s LLM-backed workflows shine, giving developers a playground where retro aesthetics meet contemporary intelligence.',
       url: 'https://terminal.codedbykay.se/',
       icon: Icons.terminal,
-      tags: ['Web', 'CLI', 'Interactive', 'LLM', 'TypeScript', 'HTML', 'CSS'],
+      tags: [
+        'Web',
+        'CLI emulator',
+        'Interactive',
+        'LLM',
+        'TypeScript',
+        'HTML',
+        'CSS',
+      ],
     ),
     ProjectModel(
       title: 'Simply Piano',
@@ -57,11 +65,11 @@ class ProjectModel {
       tags: ['Art', 'Canvas', 'Creative', 'TypeScript', 'HTML', 'CSS'],
     ),
     ProjectModel(
-      title: 'Lazy world',
+      title: 'Lazy World',
       description:
           'Lazy World is productivity for the unmotivated: Kanban boards for getting things done… eventually. LazyDraw, doodle your dreams away. LazyNote, write it down before you forget. LazyAsk, AI that does the thinking for you. LazyBreathe, just breathe.',
       url: 'https://lazy-world.netlify.app/',
-      icon: Icons.circle,
+      icon: Icons.cloud,
       tags: [
         'Web',
         'Kanban',
