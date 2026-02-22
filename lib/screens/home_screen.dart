@@ -30,10 +30,11 @@ class HomeScreen extends StatelessWidget {
               snap: true,
               toolbarHeight: 64,
               backgroundColor: theme.appBarTheme.backgroundColor,
-              title: Row(
-                children: [
-                  Text('CodedByKay', style: theme.appBarTheme.titleTextStyle),
-                ],
+              titleSpacing: 16,
+              title: Text(
+                'CodedByKay Portfolio',
+                style: theme.appBarTheme.titleTextStyle,
+                overflow: TextOverflow.ellipsis,
               ),
               actions: [
                 if (isWide)

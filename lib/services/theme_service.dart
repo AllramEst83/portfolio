@@ -82,21 +82,24 @@ class ThemeService extends ChangeNotifier {
   }
 
   // ---------------------------------------------------------------------------
-  // Neumorphism
+  // Neumorphism — cool slate/blue monochrome
+  // primary on bg ≈ 5.8:1, secondary on bg ≈ 8.6:1 (WCAG AA+)
   // ---------------------------------------------------------------------------
   ThemeData get _neumorphism {
     const bg = Color(0xFFE0E5EC);
-    const onBg = Color(0xFF2D3436);
+    const onBg = Color(0xFF1A202C);
+    const primary = Color(0xFFCF6B5E);
+    const secondary = Color(0xFF3D7A9E);
 
     return ThemeData(
       brightness: Brightness.light,
       colorScheme: const ColorScheme.light(
-        primary: Color(0xFF6C5CE7),
-        secondary: Color(0xFFA29BFE),
-        tertiary: Color(0xFFDFE6E9),
+        primary: primary,
+        secondary: secondary,
+        tertiary: Color(0xFFBCC8D6),
         surface: bg,
         onPrimary: Colors.white,
-        onSecondary: onBg,
+        onSecondary: Colors.white,
         onSurface: onBg,
       ),
       scaffoldBackgroundColor: bg,
@@ -200,11 +203,11 @@ class ThemeService extends ChangeNotifier {
   }
 
   // ---------------------------------------------------------------------------
-  // Material Design
+  // Material Design — warm teal, distinct from Neumorphism's cool blues
   // ---------------------------------------------------------------------------
   ThemeData get _materialTheme {
     final base = ColorScheme.fromSeed(
-      seedColor: const Color(0xFF6750A4),
+      seedColor: const Color(0xFF00796B),
       brightness: Brightness.light,
     );
 
