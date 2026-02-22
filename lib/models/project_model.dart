@@ -56,5 +56,25 @@ class ProjectModel {
       icon: Icons.brush,
       tags: ['Art', 'Canvas', 'Creative', 'TypeScript', 'HTML', 'CSS'],
     ),
+    ProjectModel(
+      title: 'Lazy world',
+      description:
+          'Lazy World is productivity for the unmotivated: Kanban boards for getting things done… eventually. LazyDraw, doodle your dreams away. LazyNote, write it down before you forget. LazyAsk, AI that does the thinking for you. LazyBreathe, just breathe.',
+      url: 'https://lazy-world.netlify.app/',
+      icon: Icons.circle,
+      tags: [
+        'Web',
+        'Kanban',
+        'AI',
+        'TypeScript',
+        'HTML',
+        'CSS',
+        'Chat',
+        'Doodle',
+        'Note',
+        'Breathe',
+        'React',
+      ],
+    ),
   ];
 }
