@@ -102,6 +102,7 @@ class HeroSection extends StatelessWidget {
               'JetPack Compose',
               'React',
               'Vue',
+              'Angular (Way back)',
               'Blazor',
               'Docker',
               'LM Studio',
