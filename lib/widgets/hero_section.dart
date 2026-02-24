@@ -74,7 +74,6 @@ class HeroSection extends StatelessWidget {
               'ASP.NET MVC',
               'REST APIs (OpenAPI, Swagger)',
               'ASP.NET Razor Pages',
-              '.Net MAUI',
               'C#',
               'Entity Framework',
               'JavaScript',
@@ -97,6 +96,7 @@ class HeroSection extends StatelessWidget {
             theme: theme,
             color: cs.primary,
             skills: const [
+              '.NET MAUI',
               'Flutter',
               'Dart',
               'JetPack Compose',
