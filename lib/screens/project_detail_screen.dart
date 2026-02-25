@@ -52,13 +52,6 @@ class ProjectDetailScreen extends StatelessWidget {
                   style: theme.appBarTheme.titleTextStyle,
                   overflow: TextOverflow.ellipsis,
                 ),
-                actions: [
-                  IconButton(
-                    icon: const Icon(Icons.open_in_new_rounded),
-                    tooltip: 'Open live project',
-                    onPressed: _launch,
-                  ),
-                ],
               ),
               SliverToBoxAdapter(
                 child: Padding(
