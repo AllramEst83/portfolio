@@ -6,6 +6,7 @@ class ProjectModel {
   final String url;
   final IconData icon;
   final List<String> tags;
+  final String? longDescription;
 
   const ProjectModel({
     required this.title,
@@ -13,6 +14,7 @@ class ProjectModel {
     required this.url,
     required this.icon,
     required this.tags,
+    this.longDescription,
   });
 
   static const List<ProjectModel> featured = [
@@ -31,6 +33,8 @@ class ProjectModel {
         'HTML',
         'CSS',
       ],
+      longDescription:
+          'A retro-styled terminal interface, rebuilt for the age of language models. The app emulates the feel of a late-20th-century boot screen—monospaced type, CRT glow, decisive borders—while exposing a modern conversational interface under the hood. It was built to explore how far you can push “character mode” UX for today’s AI workflows: command-style prompts, quick switches between agents, and discoverable affordances without losing the hacker aesthetic.',
     ),
     ProjectModel(
       title: 'Simply Piano',
@@ -47,6 +51,8 @@ class ProjectModel {
         'HTML',
         'CSS',
       ],
+      longDescription:
+          'Simply Piano started as a study in timing, latency, and ergonomics for music creation in the browser. The 32-key layout, built on top of Tone.js, focuses on immediacy: low-latency feedback, clear visual states for pressed keys, and simple controls for switching instruments and effects. Under the hood it coordinates real-time synthesis with scheduling and playback so that even casual users can improvise, replay, and layer sounds without getting lost in a DAW-style interface.',
     ),
     ProjectModel(
       title: 'Barvabygden',
@@ -55,6 +61,8 @@ class ProjectModel {
       url: 'https://barvabygden.netlify.app/',
       icon: Icons.landscape,
       tags: ['Community', 'Web', 'Design', 'HTML', 'CSS', 'JavaScript'],
+      longDescription:
+          'Barvabygden is a small but opinionated site for a Swedish parish, designed to be maintainable by non-developers while still feeling warm and human. The focus is on clarity of information architecture—events, news, and contact information are all a single click away—paired with typography and color choices that feel local and grounded rather than generic “template web.” It was also an exercise in building something fast, accessible, and easy to host for a community with limited technical resources.',
     ),
     ProjectModel(
       title: 'Pixel Paint',
@@ -63,6 +71,8 @@ class ProjectModel {
       url: 'https://pixel-paint-codedbykay.netlify.app/',
       icon: Icons.brush,
       tags: ['Art', 'Canvas', 'Creative', 'TypeScript', 'HTML', 'CSS'],
+      longDescription:
+          'Pixel Paint turns any image into a low-resolution grid you can “repaint” one tile at a time. The project explores canvas performance, color quantization, and UX for highly repetitive actions—things like keyboard shortcuts, smart color picking, and subtle hover states. It’s deliberately playful but sits on top of a carefully tuned rendering pipeline to keep interactions feeling crisp even for larger grids and user-supplied images.',
     ),
     ProjectModel(
       title: 'Lazy World',
@@ -83,6 +93,25 @@ class ProjectModel {
         'Breathe',
         'React',
       ],
+      longDescription:
+          'Lazy World is a suite of tiny, tongue-in-cheek productivity tools built around the idea that not every system has to be hyper-optimized. Each mini-app—Kanban, doodling, notes, AI Q&A, breathing—shares a common design language but experiments with different interaction patterns, from drag-and-drop columns to sketch-like canvases. It’s a sandbox for testing how small, opinionated tools can make it easier to start rather than to “perfect” a workflow.',
     ),
   ];
+
+  String get slug {
+    final normalized = title
+        .toLowerCase()
+        .replaceAll(RegExp(r'[^a-z0-9\\s-]'), '')
+        .trim()
+        .replaceAll(RegExp(r'\\s+'), '-');
+    return normalized;
+  }
+
+  static ProjectModel? fromSlug(String slug) {
+    try {
+      return featured.firstWhere((project) => project.slug == slug);
+    } catch (_) {
+      return null;
+    }
+  }
 }

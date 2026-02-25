@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../models/project_model.dart';
 import '../services/theme_service.dart';
 import 'themed_card.dart';
@@ -25,72 +27,85 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    final width = MediaQuery.sizeOf(context).width;
+    final isMobile = width < 600;
 
-    return ThemedCard(
-      themeService: themeService,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: cs.primary.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(12),
+    void openDetails() {
+      context.go('/projects/${project.slug}');
+    }
+
+    return GestureDetector(
+      onTap: openDetails,
+      behavior: HitTestBehavior.opaque,
+      child: ThemedCard(
+        themeService: themeService,
+        padding: EdgeInsets.all(isMobile ? 20 : 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: cs.primary.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(project.icon, color: cs.primary, size: 24),
                 ),
-                child: Icon(project.icon, color: cs.primary, size: 24),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Text(
-                  project.title,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Text(
+                    project.title,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 14),
-          Text(
-            project.description,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: cs.onSurface.withValues(alpha: 0.75),
-              height: 1.5,
+              ],
             ),
-          ),
-          const SizedBox(height: 16),
-          Wrap(
-            spacing: 6,
-            runSpacing: 6,
-            children: project.tags.map((tag) {
-              return Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: cs.tertiary.withValues(alpha: 0.18),
-                  borderRadius: BorderRadius.circular(6),
-                  border: Border.all(
-                    color: cs.tertiary.withValues(alpha: 0.3),
+            const SizedBox(height: 14),
+            Text(
+              project.description,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: cs.onSurface.withValues(alpha: 0.75),
+                height: 1.5,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: project.tags.map((tag) {
+                return Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
                   ),
-                ),
-                child: Text(
-                  tag,
-                  style: theme.textTheme.labelSmall?.copyWith(
-                    color: cs.onSurface.withValues(alpha: 0.8),
-                    fontWeight: FontWeight.w600,
+                  decoration: BoxDecoration(
+                    color: cs.tertiary.withValues(alpha: 0.18),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                      color: cs.tertiary.withValues(alpha: 0.3),
+                    ),
                   ),
-                ),
-              );
-            }).toList(),
-          ),
-          const SizedBox(height: 18),
-          Align(
-            alignment: Alignment.centerRight,
-            child: _LaunchButton(onTap: _launch, theme: theme),
-          ),
-        ],
+                  child: Text(
+                    tag,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      color: cs.onSurface.withValues(alpha: 0.8),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 18),
+            Align(
+              alignment: Alignment.centerRight,
+              child: _LaunchButton(onTap: _launch, theme: theme),
+            ),
+          ],
+        ),
       ),
     );
   }
