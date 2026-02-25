@@ -101,9 +101,9 @@ class ProjectModel {
   String get slug {
     final normalized = title
         .toLowerCase()
-        .replaceAll(RegExp(r'[^a-z0-9\\s-]'), '')
+        .replaceAll(RegExp(r'[^a-z0-9\s-]'), '')
         .trim()
-        .replaceAll(RegExp(r'\\s+'), '-');
+        .replaceAll(RegExp(r'\s+'), '-');
     return normalized;
   }
 
