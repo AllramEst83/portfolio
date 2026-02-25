@@ -21,7 +21,7 @@ class ProjectModel {
     ProjectModel(
       title: 'Terminal Emulator',
       description:
-          'This project reimagines a late-20th-century terminal—glowing phosphor text, chunky borders, and all—but layers it with a modern conversational AI experience. The goal was to capture that nostalgic boot-screen vibe while letting today’s LLM-backed workflows shine, giving developers a playground where retro aesthetics meet contemporary intelligence.',
+          'A retro-inspired terminal playground that fuses nostalgic phosphor aesthetics with modern LLM intelligence.',
       url: 'https://terminal.codedbykay.se/',
       icon: Icons.terminal,
       tags: [
@@ -34,7 +34,7 @@ class ProjectModel {
         'CSS',
       ],
       longDescription:
-          'A retro-styled terminal interface, rebuilt for the age of language models. The app emulates the feel of a late-20th-century boot screen—monospaced type, CRT glow, decisive borders—while exposing a modern conversational interface under the hood. It was built to explore how far you can push “character mode” UX for today’s AI workflows: command-style prompts, quick switches between agents, and discoverable affordances without losing the hacker aesthetic.',
+          'This project reimagines the old-school terminal, complete with glowing phosphor text and chunky borders, and layers it with a modern conversational AI experience. The goal was to capture a nostalgic boot-screen vibe while letting today’s LLM-backed workflows shine, giving developers a playground where retro aesthetics meet contemporary intelligence.',
     ),
     ProjectModel(
       title: 'Simply Piano',
