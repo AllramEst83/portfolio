@@ -91,7 +91,7 @@ class ProjectDetailScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
-                                  'Case study • ${Uri.parse(project.url).host}',
+                                  'Project • ${Uri.parse(project.url).host}',
                                   style: theme.textTheme.labelLarge?.copyWith(
                                     color: cs.onSurface.withValues(alpha: 0.65),
                                     fontWeight: FontWeight.w600,
