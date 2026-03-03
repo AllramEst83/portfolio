@@ -21,25 +21,25 @@ class ProjectModel {
     ProjectModel(
       title: 'Terminal Emulator',
       description:
-          'A retro-inspired terminal playground that fuses nostalgic phosphor aesthetics with modern LLM intelligence.',
+          'This Gemini application honors vintage terminal aesthetics through a customizable chat interface.',
       url: 'https://terminal.codedbykay.se/',
       icon: Icons.terminal,
       tags: [
-        'Web',
-        'CLI emulator',
-        'Interactive',
-        'LLM',
+        'React',
         'TypeScript',
         'HTML',
         'CSS',
+        'Retro Aesthetics',
+        'Gemini integration',
+        'Chat',
       ],
       longDescription:
-          'This project reimagines the old-school terminal, complete with glowing phosphor text and chunky borders, and layers it with a modern conversational AI experience. The goal was to capture a nostalgic boot-screen vibe while letting today’s LLM-backed workflows shine, giving developers a playground where retro aesthetics meet contemporary intelligence.',
+          'I created this project because I love the look and feel of vintage terminals—the glowing screen and the mechanical hum of the hardware. This Gemini chat application is my homage to those days, featuring various utility commands to customize and enhance the chat experience.',
     ),
     ProjectModel(
       title: 'Simply Piano',
       description:
-          'A modern, interactive 32-key piano web application built with Tone.js for real-time sound synthesis, extensive audio effects, and built-in song playback capabilities.',
+          'This 32-key piano leverages Tone.js for audio effects and song editing, engineered via vanilla JS, HTML, and CSS.',
       url: 'https://simply-piano.netlify.app/',
       icon: Icons.piano,
       tags: [
@@ -52,7 +52,7 @@ class ProjectModel {
         'CSS',
       ],
       longDescription:
-          'Simply Piano started as a study in timing, latency, and ergonomics for music creation in the browser. The 32-key layout, built on top of Tone.js, focuses on immediacy: low-latency feedback, clear visual states for pressed keys, and simple controls for switching instruments and effects. Under the hood it coordinates real-time synthesis with scheduling and playback so that even casual users can improvise, replay, and layer sounds without getting lost in a DAW-style interface.',
+          'I developed this 32-key piano after falling in love with the incredible power and versatility of the Tone.js library. The application features a robust suite of audio effects and a fully integrated song editor, all meticulously crafted using vanilla JavaScript, HTML, and CSS.',
     ),
     ProjectModel(
       title: 'Barvabygden',
