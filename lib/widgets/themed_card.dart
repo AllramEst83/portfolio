@@ -36,7 +36,7 @@ class _ThemedCardState extends State<ThemedCard> {
         duration: const Duration(milliseconds: 250),
         curve: Curves.easeOutCubic,
         transform: _hovering
-            ? (Matrix4.identity()..scale(1.02))
+            ? (Matrix4.identity()..scaleByDouble(1.02, 1.02, 1.0, 1.0))
             : Matrix4.identity(),
         transformAlignment: Alignment.center,
         child: _buildForTheme(type, theme, padding),

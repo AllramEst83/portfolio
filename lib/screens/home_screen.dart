@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../models/project_model.dart';
 import '../services/theme_service.dart';
 import '../widgets/glassmorphism_background.dart';
@@ -77,21 +78,15 @@ class HomeScreen extends StatelessWidget {
                 vertical: 16,
               ),
               sliver: isDesktop
-                  ? SliverGrid(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 20,
-                            crossAxisSpacing: 20,
-                            mainAxisExtent: 280,
-                          ),
-                      delegate: SliverChildBuilderDelegate(
-                        (context, i) => ProjectCard(
-                          project: ProjectModel.featured[i],
-                          themeService: themeService,
-                        ),
-                        childCount: ProjectModel.featured.length,
+                  ? SliverMasonryGrid.count(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 20,
+                      itemBuilder: (context, i) => ProjectCard(
+                        project: ProjectModel.featured[i],
+                        themeService: themeService,
                       ),
+                      childCount: ProjectModel.featured.length,
                     )
                   : SliverList(
                       delegate: SliverChildBuilderDelegate(

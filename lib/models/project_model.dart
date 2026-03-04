@@ -70,7 +70,16 @@ class ProjectModel {
           'A paint by pixel game in the browser. Bring your own image to paint.',
       url: 'https://pixel-paint-codedbykay.netlify.app/',
       icon: Icons.brush,
-      tags: ['React', 'TypeScript', 'HTML', 'CSS', 'Art', 'Canvas', 'Creative', 'Pixel Paint''],
+      tags: [
+        'React',
+        'TypeScript',
+        'HTML',
+        'CSS',
+        'Art',
+        'Canvas',
+        'Creative',
+        'Pixel Paint',
+      ],
       longDescription:
           'Pixel Paint turns any image into a low-resolution grid you can “repaint” one tile at a time. The project explores canvas performance, color quantization, and UX for highly repetitive actions—things like keyboard shortcuts, smart color picking, and subtle hover states. It’s deliberately playful but sits on top of a carefully tuned rendering pipeline to keep interactions feeling crisp even for larger grids and user-supplied images.',
     ),
