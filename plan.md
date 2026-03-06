@@ -81,7 +81,7 @@ Terminal Emulator: https://terminal.codedbykay.se/
 
 Simply Piano: https://simply-piano.netlify.app/
 
-Barvabygden: https://barvabygden.netlify.app/
+Barvabygden: https://www.barvabygden.se/
 
 Pixel Paint: https://pixel-paint-codedbykay.netlify.app/
 
