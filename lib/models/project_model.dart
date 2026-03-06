@@ -58,7 +58,7 @@ class ProjectModel {
       title: 'Barvabygden',
       description:
           'A community-driven web presence for the Barva parish in Sweden.',
-      url: 'https://barvabygden.netlify.app/',
+      url: 'https://www.barvabygden.se/',
       icon: Icons.landscape,
       tags: ['Community', 'Web', 'Design', 'HTML', 'CSS', 'JavaScript'],
       longDescription:
