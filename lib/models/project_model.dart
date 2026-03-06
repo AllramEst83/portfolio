@@ -106,13 +106,13 @@ class ProjectModel {
           'Lazy World is a suite of tiny, tongue-in-cheek productivity tools built around the idea that not every system has to be hyper-optimized. Each mini-app—Kanban, doodling, notes, AI Q&A, breathing—shares a common design language but experiments with different interaction patterns, from drag-and-drop columns to sketch-like canvases. It’s a sandbox for testing how small, opinionated tools can make it easier to start rather than to “perfect” a workflow.',
     ),
     ProjectModel(
-      title: 'NEO ICON',
+      title: 'NEOICON',
       description: 'A tool for generating icons from text, converting and resizing existing images.',
       longDescription: 'A tool for generating icons from text and converting or resizing existing images. Once you have an icon, you can download a ZIP file containing the most common standard sizes. It is built with React, TypeScript, HTML, CSS, and Neo-Brutalism.',
       url: 'https://neo-icon.netlify.app/',
-      icon: Icons.icon
-      tags: ['React', 'TypeScript', 'HTML', 'CSS', 'Neo-Brutalism', 'Icon', 'Design']
-    )
+      icon: Icons.imagesearch_roller,
+      tags: ['React', 'TypeScript', 'HTML', 'CSS', 'Neo-Brutalism', 'Icon', 'Design'],
+    ),
   ];
 
   String get slug {
