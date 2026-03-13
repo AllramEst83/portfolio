@@ -106,12 +106,29 @@ class ProjectModel {
           'Lazy World is a suite of tiny, tongue-in-cheek productivity tools built around the idea that not every system has to be hyper-optimized. Each mini-app—Kanban, doodling, notes, AI Q&A, breathing—shares a common design language but experiments with different interaction patterns, from drag-and-drop columns to sketch-like canvases. It’s a sandbox for testing how small, opinionated tools can make it easier to start rather than to “perfect” a workflow.',
     ),
     ProjectModel(
-      title: 'NEOICON',
+      title: 'NEO ICON',
       description: 'A tool for generating icons from text, converting and resizing existing images.',
       longDescription: 'A tool for generating icons from text and converting or resizing existing images. Once you have an icon, you can download a ZIP file containing the most common standard sizes. It is built with React, TypeScript, HTML, CSS, and Neo-Brutalism.',
       url: 'https://neo-icon.netlify.app/',
       icon: Icons.imagesearch_roller,
       tags: ['React', 'TypeScript', 'HTML', 'CSS', 'Neo-Brutalism', 'Icon', 'Design'],
+    ),
+    ProjectModel(
+      title: 'Neo Compare',
+      description:
+          'A fast, browser-based tool for comparing two pieces of text side by side.',
+      longDescription:
+          'Neo Compare is a lightweight text comparison tool designed for quick, in-browser diffing. You can paste two texts and see differences instantly, with options to trim whitespace, ignore case, skip blank lines, or even ignore line order. A reference mode lets you compare both sides against a single source, making it ideal for reviewing copy changes, code snippets, or content revisions without needing a full diff tool.',
+      url: 'https://neo-compare.netlify.app/',
+      icon: Icons.compare_arrows,
+      tags: [
+        'React',
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'Text Compare',
+        'Diff Tool',
+      ],
     ),
   ];
 
