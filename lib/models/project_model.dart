@@ -114,7 +114,7 @@ class ProjectModel {
       tags: ['React', 'TypeScript', 'HTML', 'CSS', 'Neo-Brutalism', 'Icon', 'Design'],
     ),
     ProjectModel(
-      title: 'Neo Compare',
+      title: 'NEO Compare',
       description:
           'A fast, browser-based tool for comparing two pieces of text side by side.',
       longDescription:
