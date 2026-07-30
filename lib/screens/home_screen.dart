@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
     final width = MediaQuery.sizeOf(context).width;
-    final isWide = width > 700;
+    final isWide = width > 850;
     final isDesktop = width > 1100;
 
     return Scaffold(
@@ -41,7 +41,10 @@ class HomeScreen extends StatelessWidget {
                 if (isWide)
                   Padding(
                     padding: const EdgeInsets.only(right: 16),
-                    child: ThemeSwitcher(themeService: themeService),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: ThemeSwitcher(themeService: themeService),
+                    ),
                   )
                 else
                   IconButton(

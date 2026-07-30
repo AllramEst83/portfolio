@@ -19,6 +19,25 @@ class ProjectModel {
 
   static const List<ProjectModel> featured = [
     ProjectModel(
+      title: 'Dot Matrix Display',
+      description:
+          'A cyber-aesthetic HTML5 Canvas LED Dot Matrix display with custom text, emojis, animation modes, dot styles, draw mode, image dither, and glow effects.',
+      url: 'https://dot-matrix-display.netlify.app/',
+      icon: Icons.grid_on,
+      tags: [
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'Canvas',
+        'LED Matrix',
+        'Animation',
+        'Dithering',
+        'Web',
+      ],
+      longDescription:
+          'Dot Matrix Display is an interactive LED terminal and animation generator built with HTML5 Canvas, JavaScript, and CSS. It features custom text scrolling, customizable grid sizes, dot shapes, glow effects, drawing tools, live camera feeds, and image dithering algorithms (Atkinson, Bayer, Floyd-Steinberg).',
+    ),
+    ProjectModel(
       title: 'Terminal Emulator',
       description:
           'This Gemini application honors vintage terminal aesthetics through a customizable chat interface.',
