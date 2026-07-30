@@ -38,6 +38,24 @@ class ProjectModel {
           'Dot Matrix Display is an interactive LED terminal and animation generator built with HTML5 Canvas, JavaScript, and CSS. It features custom text scrolling, customizable grid sizes, dot shapes, glow effects, drawing tools, live camera feeds, and image dithering algorithms (Atkinson, Bayer, Floyd-Steinberg).',
     ),
     ProjectModel(
+      title: 'Barvalappen',
+      description:
+          'Real-time water temperature, trend, and water level monitoring for Barva beach in Sweden.',
+      url: 'https://barvalappen-app.herokuapp.com/',
+      icon: Icons.waves,
+      tags: [
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'GSAP',
+        'Chart.js',
+        'UI Overhaul',
+        'Web',
+      ],
+      longDescription:
+          'Barvalappen tracks live water temperatures, trends, and water levels for Barva badplats. While I was not the original creator of the application, I engineered a major visual and interactive UI overhaul—introducing fluid GSAP animations, ambient particle effects, responsive Chart.js analytics, and a polished modern aesthetic.',
+    ),
+    ProjectModel(
       title: 'Terminal Emulator',
       description:
           'This Gemini application honors vintage terminal aesthetics through a customizable chat interface.',
