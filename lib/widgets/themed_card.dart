@@ -29,17 +29,19 @@ class _ThemedCardState extends State<ThemedCard> {
     final padding =
         widget.padding ?? const EdgeInsets.all(24);
 
-    return MouseRegion(
-      onEnter: (_) => setState(() => _hovering = true),
-      onExit: (_) => setState(() => _hovering = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeOutCubic,
-        transform: _hovering
-            ? (Matrix4.identity()..scaleByDouble(1.02, 1.02, 1.0, 1.0))
-            : Matrix4.identity(),
-        transformAlignment: Alignment.center,
-        child: _buildForTheme(type, theme, padding),
+    return RepaintBoundary(
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _hovering = true),
+        onExit: (_) => setState(() => _hovering = false),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeOutCubic,
+          transform: _hovering
+              ? (Matrix4.identity()..scaleByDouble(1.02, 1.02, 1.0, 1.0))
+              : Matrix4.identity(),
+          transformAlignment: Alignment.center,
+          child: _buildForTheme(type, theme, padding),
+        ),
       ),
     );
   }

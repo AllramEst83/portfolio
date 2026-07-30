@@ -169,20 +169,21 @@ class ProjectModel {
     ),
   ];
 
-  String get slug {
-    final normalized = title
-        .toLowerCase()
-        .replaceAll(RegExp(r'[^a-z0-9\s-]'), '')
-        .trim()
-        .replaceAll(RegExp(r'\s+'), '-');
-    return normalized;
-  }
+  static final RegExp _cleanRegex = RegExp(r'[^a-z0-9\s-]');
+  static final RegExp _spaceRegex = RegExp(r'\s+');
 
-  static ProjectModel? fromSlug(String slug) {
-    try {
-      return featured.firstWhere((project) => project.slug == slug);
-    } catch (_) {
-      return null;
-    }
-  }
+  String get slug => title
+      .toLowerCase()
+      .replaceAll(_cleanRegex, '')
+      .trim()
+      .replaceAll(_spaceRegex, '-');
+
+  String get domain => Uri.parse(url).host;
+
+  static final Map<String, ProjectModel> _slugMap = {
+    for (final project in featured) project.slug: project,
+  };
+
+  static ProjectModel? fromSlug(String slug) => _slugMap[slug];
 }
+

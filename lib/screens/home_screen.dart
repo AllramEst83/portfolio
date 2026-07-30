@@ -8,6 +8,8 @@ import '../widgets/project_card.dart';
 import '../widgets/theme_switcher.dart';
 
 class HomeScreen extends StatelessWidget {
+  static final int _currentYear = DateTime.now().year;
+
   final ThemeService themeService;
 
   const HomeScreen({super.key, required this.themeService});
@@ -85,9 +87,11 @@ class HomeScreen extends StatelessWidget {
                       crossAxisCount: 2,
                       mainAxisSpacing: 20,
                       crossAxisSpacing: 20,
-                      itemBuilder: (context, i) => ProjectCard(
-                        project: ProjectModel.featured[i],
-                        themeService: themeService,
+                      itemBuilder: (context, i) => RepaintBoundary(
+                        child: ProjectCard(
+                          project: ProjectModel.featured[i],
+                          themeService: themeService,
+                        ),
                       ),
                       childCount: ProjectModel.featured.length,
                     )
@@ -95,9 +99,11 @@ class HomeScreen extends StatelessWidget {
                       delegate: SliverChildBuilderDelegate(
                         (context, i) => Padding(
                           padding: const EdgeInsets.only(bottom: 16),
-                          child: ProjectCard(
-                            project: ProjectModel.featured[i],
-                            themeService: themeService,
+                          child: RepaintBoundary(
+                            child: ProjectCard(
+                              project: ProjectModel.featured[i],
+                              themeService: themeService,
+                            ),
                           ),
                         ),
                         childCount: ProjectModel.featured.length,
@@ -114,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        '© ${DateTime.now().year} CodedByKay — Binary Jazz Engineer',
+                        '© $_currentYear CodedByKay — Binary Jazz Engineer',
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: cs.onSurface.withValues(alpha: 0.45),
                         ),

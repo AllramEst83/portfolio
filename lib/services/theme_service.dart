@@ -13,17 +13,22 @@ class ThemeService extends ChangeNotifier {
     notifyListeners();
   }
 
+  late final ThemeData _neoBrutalismTheme = _buildNeoBrutalism();
+  late final ThemeData _neumorphismTheme = _buildNeumorphism();
+  late final ThemeData _glassmorphismTheme = _buildGlassmorphism();
+  late final ThemeData _materialThemeInstance = _buildMaterialTheme();
+
   ThemeData get themeData => switch (_current) {
-        AppThemeType.neoBrutalism => _neoBrutalism,
-        AppThemeType.neumorphism => _neumorphism,
-        AppThemeType.glassmorphism => _glassmorphism,
-        AppThemeType.material => _materialTheme,
+        AppThemeType.neoBrutalism => _neoBrutalismTheme,
+        AppThemeType.neumorphism => _neumorphismTheme,
+        AppThemeType.glassmorphism => _glassmorphismTheme,
+        AppThemeType.material => _materialThemeInstance,
       };
 
   // ---------------------------------------------------------------------------
   // Neo-Brutalism
   // ---------------------------------------------------------------------------
-  ThemeData get _neoBrutalism {
+  ThemeData _buildNeoBrutalism() {
     const primary = Color(0xFFFF6B6B);
     const surface = Color(0xFFFFF9E6);
     const onSurface = Color(0xFF1A1A2E);
@@ -85,7 +90,7 @@ class ThemeService extends ChangeNotifier {
   // Neumorphism — cool slate/blue monochrome
   // primary on bg ≈ 5.8:1, secondary on bg ≈ 8.6:1 (WCAG AA+)
   // ---------------------------------------------------------------------------
-  ThemeData get _neumorphism {
+  ThemeData _buildNeumorphism() {
     const bg = Color(0xFFE0E5EC);
     const onBg = Color(0xFF1A202C);
     const primary = Color(0xFFCF6B5E);
@@ -145,7 +150,7 @@ class ThemeService extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Glassmorphism
   // ---------------------------------------------------------------------------
-  ThemeData get _glassmorphism {
+  ThemeData _buildGlassmorphism() {
     const primary = Color(0xFF667EEA);
     const onSurface = Colors.white;
 
@@ -205,7 +210,7 @@ class ThemeService extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Material Design — warm teal, distinct from Neumorphism's cool blues
   // ---------------------------------------------------------------------------
-  ThemeData get _materialTheme {
+  ThemeData _buildMaterialTheme() {
     final base = ColorScheme.fromSeed(
       seedColor: const Color(0xFF00796B),
       brightness: Brightness.light,
@@ -250,3 +255,4 @@ class ThemeService extends ChangeNotifier {
     );
   }
 }
+
