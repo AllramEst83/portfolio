@@ -18,6 +18,24 @@ class ProjectModel {
   });
 
   static const List<ProjectModel> featured = [
+        ProjectModel(
+      title: "Kay's ArtShow",
+      description:
+          'A curated art portfolio featuring original drawings, portraits, and illustrations.',
+      longDescription:
+          "Kay's ArtShow is a curated portfolio of original drawings, portraits, and illustrations—ranging from intimate pencil studies to bold concept photography. It features interactive filtering, sorting, multiple UI design themes, and high-resolution artwork viewing.",
+      url: 'https://art.codedbykay.se/',
+      icon: Icons.palette,
+      tags: [
+        'Art',
+        'Gallery',
+        'Illustration',
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'Web',
+      ],
+    ),
     ProjectModel(
       title: 'Dot Matrix Display',
       description:
@@ -166,7 +184,7 @@ class ProjectModel {
         'Text Compare',
         'Diff Tool',
       ],
-    ),
+    )
   ];
 
   static final RegExp _cleanRegex = RegExp(r'[^a-z0-9\s-]');

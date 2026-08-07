@@ -85,6 +85,8 @@ Barvabygden: https://www.barvabygden.se/
 
 Pixel Paint: https://pixel-paint-codedbykay.netlify.app/
 
+Kay's ArtShow: https://art.codedbykay.se/
+
 User Experience Goal
 
 The app should be more than a list of links—it should be an "experiment" in itself. Transitions between themes should be fluid, and the "Binary Jazz" philosophy should be felt through micro-interactions and creative layouts.
