@@ -36,6 +36,25 @@ class ProjectModel {
         'Web',
       ],
     ),
+        ProjectModel(
+      title: 'Image Utility',
+      description:
+          'A browser-based image utility for converting, compressing, resizing, and transforming images with ease.',
+      longDescription:
+          'CodedByKay Image Utility is a fast, client-side image toolkit that lets you convert between formats, compress file sizes, resize dimensions, and apply basic transformations—all without uploading anything to a server. Built for developers and designers who need quick, no-fuss image processing right in the browser.',
+      url: 'https://codedbykay-image-utility.netlify.app/',
+      icon: Icons.image,
+      tags: [
+        'Image',
+        'Utility',
+        'Web',
+        'JavaScript',
+        'HTML',
+        'CSS',
+        'Convert',
+        'Compress',
+      ],
+    )
     ProjectModel(
       title: 'Dot Matrix Display',
       description:
@@ -184,7 +203,7 @@ class ProjectModel {
         'Text Compare',
         'Diff Tool',
       ],
-    )
+    ),
   ];
 
   static final RegExp _cleanRegex = RegExp(r'[^a-z0-9\s-]');
