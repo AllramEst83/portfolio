@@ -1,0 +1,187 @@
+/*
+ * Four visual identities, matching the Flutter app's ThemeService.
+ * Each theme sets the shared color/font custom properties, plus its own
+ * card/appbar treatment (hard shadows, soft neumorphic shadows, frosted
+ * glass, or Material elevation) since those techniques aren't reducible
+ * to a handful of shared variables.
+ */
+
+:root,
+[data-theme='neo-brutalism'] {
+  --color-primary: #ff6b6b;
+  --color-on-primary: #1a1a2e;
+  --color-secondary: #4ecdc4;
+  --color-on-secondary: #1a1a2e;
+  --color-tertiary: #ffe66d;
+  --color-surface: #fff9e6;
+  --color-on-surface: #1a1a2e;
+  --color-background: #fff9e6;
+  --font-heading: 'Space Mono', monospace;
+  --font-body: 'Space Mono', monospace;
+}
+
+[data-theme='neumorphism'] {
+  --color-primary: #cf6b5e;
+  --color-on-primary: #ffffff;
+  --color-secondary: #3d7a9e;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #bcc8d6;
+  --color-surface: #e0e5ec;
+  --color-on-surface: #1a202c;
+  --color-background: #e0e5ec;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+[data-theme='glassmorphism'] {
+  --color-primary: #667eea;
+  --color-on-primary: #ffffff;
+  --color-secondary: #764ba2;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #f093fb;
+  --color-surface: #1a1a2e;
+  --color-on-surface: #ffffff;
+  --color-background: #0f0f23;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+[data-theme='material'] {
+  --color-primary: #00696c;
+  --color-on-primary: #ffffff;
+  --color-secondary: #4a6363;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #4b607c;
+  --color-surface: #fafdfc;
+  --color-on-surface: #191c1c;
+  --color-background: #fafdfc;
+  --font-heading: 'Roboto', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+/* ---------- Hero title letter-spacing (neo-brutalism is looser/rawer) ---------- */
+.hero__name {
+  letter-spacing: 0.5px;
+}
+
+[data-theme='neo-brutalism'] .hero__name {
+  letter-spacing: 2px;
+}
+
+/* Material theme borrows the tertiary color for its "muted" skill category,
+   just like the Flutter build (cs.tertiary instead of onSurface @ 78%). */
+[data-theme='material'] .skill-category__title--muted,
+[data-theme='material'] .skill-badge--muted {
+  color: var(--color-tertiary);
+}
+
+[data-theme='material'] .skill-badge--muted {
+  background: color-mix(in srgb, var(--color-tertiary) 12%, transparent);
+  border-color: color-mix(in srgb, var(--color-tertiary) 30%, transparent);
+}
+
+/* =====================================================================
+   Neo-Brutalism — thick borders, hard offset shadows, square corners
+   ===================================================================== */
+[data-theme='neo-brutalism'] .app-header {
+  border-bottom: 3px solid var(--color-on-surface);
+}
+
+[data-theme='neo-brutalism'] .theme-sheet {
+  border-top: 3px solid var(--color-on-surface);
+  border-radius: 0;
+}
+
+[data-theme='neo-brutalism'] .project-card {
+  background: var(--color-surface);
+  border: 3px solid var(--color-on-surface);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--color-on-surface);
+}
+
+[data-theme='neo-brutalism'] .project-card:hover {
+  box-shadow: 6px 6px 0 var(--color-on-surface);
+}
+
+[data-theme='neo-brutalism'] .project-card__icon,
+[data-theme='neo-brutalism'] .tag,
+[data-theme='neo-brutalism'] .skill-badge,
+[data-theme='neo-brutalism'] .project-card__launch {
+  border-radius: 0;
+}
+
+/* =====================================================================
+   Neumorphism — soft extruded surfaces, monochrome, big radii
+   ===================================================================== */
+[data-theme='neumorphism'] .project-card {
+  background: var(--color-background);
+  border-radius: 20px;
+  box-shadow:
+    -6px -6px 12px rgba(255, 255, 255, 0.8),
+    6px 6px 12px rgba(163, 177, 198, 0.5);
+}
+
+[data-theme='neumorphism'] .project-card:hover {
+  box-shadow:
+    -6px -6px 16px rgba(255, 255, 255, 0.8),
+    6px 6px 16px rgba(163, 177, 198, 0.5);
+}
+
+[data-theme='neumorphism'] .theme-sheet,
+[data-theme='neumorphism'] .app-header {
+  background: var(--color-background);
+}
+
+/* =====================================================================
+   Glassmorphism — frosted, translucent, layered on a dark backdrop
+   ===================================================================== */
+[data-theme='glassmorphism'] body {
+  background: radial-gradient(circle at 15% 20%, rgba(102, 126, 234, 0.25), transparent 45%),
+    radial-gradient(circle at 75% 30%, rgba(118, 75, 162, 0.25), transparent 45%),
+    radial-gradient(circle at 35% 75%, rgba(240, 147, 251, 0.2), transparent 45%),
+    var(--color-background);
+}
+
+[data-theme='glassmorphism'] .app-header {
+  background: transparent;
+  backdrop-filter: blur(12px);
+}
+
+[data-theme='glassmorphism'] .project-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+}
+
+[data-theme='glassmorphism'] .project-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='glassmorphism'] .theme-sheet {
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =====================================================================
+   Material — grid-based, elevation shadows, generous rounding
+   ===================================================================== */
+[data-theme='material'] .project-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='material'] .project-card:hover {
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.16),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='material'] .app-header,
+[data-theme='material'] .theme-sheet {
+  background: var(--color-surface);
+}
