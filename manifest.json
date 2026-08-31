@@ -1,0 +1,18 @@
+{
+    "name": "Portfolio",
+    "short_name": "Portfolio",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#FFF9E6",
+    "theme_color": "#FF6B6B",
+    "description": "Portfolio – Improvised logic, structured chaos, high-performance execution.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "677x369",
+            "type": "image/png"
+        }
+    ]
+}
