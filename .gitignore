@@ -4,5 +4,7 @@
 .history/
 
 # Editors
+.vscode/
+
 .idea/
 #.vscode/
