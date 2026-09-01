@@ -10,57 +10,44 @@ const SKILL_CATEGORIES = [
   {
     title: 'Software & editors',
     variant: 'muted',
-    skills: [
-      'Visual Studio',
-      'VS Code',
-      'Cursor',
-      'Azure Data Studio',
-      'SQL Server Management Studio',
-      'LM Studio',
-    ],
+    skills: ['Visual Studio', 'Visual Studio Code', 'Azure Data Studio', 'SQL Server Management Studio'],
   },
   {
     title: 'Comfortable With',
     variant: 'secondary',
-    skills: [
-      'Fullstack Web Development',
-      '.NET Core',
-      'ASP.NET Core',
-      'ASP.NET MVC',
-      'REST APIs (OpenAPI, Swagger)',
-      'ASP.NET Razor Pages',
-      'C#',
-      'Entity Framework',
-      'JavaScript',
-      'TypeScript',
-      'HTML',
-      'CSS',
-      'MSSQL',
-      'Git',
-      'Azure Portal',
-      'Azure Cognitive Services',
-      'Microsoft DevOps',
-      'CI/CD (Azure DevOps, GitHub Actions)',
-      'Gemini AI API',
-      'OpenAI API',
+    groups: [
+      {
+        subtitle: 'Backend & Cloud',
+        skills: [
+          '.NET Core',
+          'ASP.NET Core',
+          'ASP.NET MVC',
+          'ASP.NET Razor Pages',
+          'C#',
+          'Entity Framework',
+          'MSSQL',
+          'REST APIs (OpenAPI, Swagger)',
+          'Azure Portal',
+          'Azure Cognitive Services',
+          'CI/CD (Azure DevOps, GitHub Actions)',
+          'Microsoft DevOps',
+          'Docker'
+        ],
+      },
+      {
+        subtitle: 'Frontend',
+        skills: ['JavaScript','TypeScript', 'Vue', 'React'],
+      },
+      {
+        subtitle: 'AI Integration',
+        skills: ['Gemini AI API', 'OpenAI API', 'Azure OpenAI Service', 'Ollama'],
+      }
     ],
   },
   {
     title: 'Explored & Experimenting',
     variant: 'primary',
-    skills: [
-      '.NET MAUI',
-      'Flutter',
-      'Dart',
-      'JetPack Compose',
-      'Kotlin',
-      'React',
-      'Vue',
-      'Angular (Way back)',
-      'Blazor',
-      'Docker',
-      'LM Studio',
-    ],
+    skills: ['Blazor', 'Flutter', '.NET MAUI', 'LM Studio'],
   },
 ];
 
@@ -75,14 +62,31 @@ function skillBadge(label, variant) {
   return el('span', { class: `skill-badge skill-badge--${variant}` }, label);
 }
 
-function skillCategory({ title, variant, skills }) {
+function skillBadges(skills, variant) {
+  return el(
+    'div',
+    { class: 'skill-category__badges' },
+    skills.map((skill) => skillBadge(skill, variant)),
+  );
+}
+
+function skillSubgroup({ subtitle, skills }, variant) {
+  return el('div', { class: 'skill-subgroup' }, [
+    el('h4', { class: 'skill-subgroup__title' }, subtitle),
+    skillBadges(skills, variant),
+  ]);
+}
+
+function skillCategory({ title, variant, skills, groups }) {
   return el('div', { class: 'skill-category' }, [
     el('h3', { class: `skill-category__title skill-category__title--${variant}` }, title),
-    el(
-      'div',
-      { class: 'skill-category__badges' },
-      skills.map((skill) => skillBadge(skill, variant)),
-    ),
+    groups
+      ? el(
+          'div',
+          { class: 'skill-category__groups' },
+          groups.map((group) => skillSubgroup(group, variant)),
+        )
+      : skillBadges(skills, variant),
   ]);
 }
 

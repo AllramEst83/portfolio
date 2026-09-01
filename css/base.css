@@ -321,6 +321,25 @@ body,
   gap: 10px;
 }
 
+.skill-category__groups {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-subgroup__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-on-surface) 60%, transparent);
+}
+
+.skill-subgroup .skill-category__badges {
+  margin-top: 8px;
+}
+
 .skill-badge {
   padding: 8px 14px;
   border-radius: 8px;
